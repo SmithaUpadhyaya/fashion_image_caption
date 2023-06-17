@@ -7,7 +7,8 @@ import glob #Search a file with specific pattern or name
 import cv2
 import os
 
-#Preprocess script to convert image files to numpy array and save them to hdf5 format.
+
+#### This is helper class for main script preprocess_images.py
 
 
 IMAGE_BASE_FOLDER = "data\\images\\"

@@ -9,7 +9,24 @@ import math
 import gc
 import os
 
+"""
+########################## Script to Pre-process image files by converting them to numpy array and save numpy arrays to hdf5 format #####################
+Working on limtted RAM resource, so convert 18k images into numpy array and them to hdf5 always caused "OutofMemory" error. Also convert 18k too long time.
+Faced memory issue to load entire the .parquet file as well.
 
+Solution took:
+-> Load .parquet file: 
+    Read data from parquet file in batch of N. N batch of records are sent to process.
+-> Process image to numpy: 
+    Create Shared Memory based on the batch size and the space need for an image. So shared memory size will be = N * image_size 
+    Used Shared Memory that can now store N image at a time. Any more then that Shared Memory was not created and will give OutOfMemory error. 
+    Image size was too large, so convert image to numpy will also be large. 
+    While experiment found 300 batch size was ideal
+We created shared memory only once and after each batch of N we clean up the shared memory to store next batch process data
+-> Create pool of process, each process write to shared memory.
+-> End of each batch N data we created a .hdf5. So by end of the script we will have (Num_Records/N) .hdf5 files 
+-> Now we combine each .hdf5 into single .hdf5
+"""
 ###################################################################################################
 
 #Since we do not know the number of batch it will generted for any give dataset file. We shall created a generator to loop thrught and show a progress

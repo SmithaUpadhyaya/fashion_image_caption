@@ -1,6 +1,10 @@
 import src.process_json_data as pj 
 import argparse
 
+"""
+Script to download the image from imageurl and convert json file to .parquet file
+"""
+
 if __name__ == '__main__':
 
     ap = argparse.ArgumentParser()	

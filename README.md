@@ -11,6 +11,7 @@ Manually writing the descriptions is a non-trivial and highly expensive task. Th
 Given clothes image provide short caption that describes the item. 
 General image captioning datasets (e.g. COCO, Fliker), the descriptions of fashion items have three unique features, which makes the automatic generation of captions a challenging task. First, fashion captioning needs to describe the attributes of a item, while image captioning generally narrates the objects and their relations in the image.</br>
 e.g image where model is wearing a shirt, general caption model describe such images as "male wearning a white shirt". Which is incorrect since we want the model to describe the item.
+In this application, it is much more important to have a performant to caption the image than an interpretable model.
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images\challange_image_text.png"/>
 </br>

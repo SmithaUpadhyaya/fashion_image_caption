@@ -5,7 +5,8 @@ import requests
 import json
 import os
 
-#Script file is used to read the raw json data to extract the information of the image metadata and download image
+#### This is helper class for main script preprocess_images
+# Script file is used to read the raw json data to extract the information of the image metadata and download image
 
 data_columns = ['id', 'title', 'desc', 'detail', 'category', 'color', 'image_url', 'image_name', 'image_extension', 'image_size']
 processed_data = os.path.join('data', 'processed_data.parquet')
