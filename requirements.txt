@@ -23,6 +23,7 @@ requests==2.28.2
 ipywidgets 
 opencv-python==4.5.4.60
 matplotlib==3.5.3
+seaborn==0.12.2
 WordCloud
 
 #Pre-process text library
