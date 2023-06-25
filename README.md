@@ -96,19 +96,86 @@ Refer requirements.txt
 2) HuggingFace `transformers` 🤗</br>
 3) peft</br>
 4) bitsandbytes</br>
+5) Streamlit
+6) HuggingFace Spaces
 
 </br>
 
 # **Metric** #
-</br>
+
+Most commonly used metric for image caption task, that is used to measuring the quality of an predict text based on reference texts are:
+
+1. <b>B</b>i<b>l</b>ingual <b>E</b>valuation <b>U</b>nderstudy (<i>Bleu</i>) Score: a concept build on precision.
+
+        Bleu = Number of correct predicted words / Number of total predicted words
+
+2. <b>R</b>ecall-<b>O</b>riented <b>U</b>nderstudy for <b>G</b>isting <b>E</b>valuation (<i>ROUGE</i>) Score: a set of metrics, rather than just one. ROUGE metric return recall, precision and f1-score. In our project have use F1-Rouge score. It's concept build on recall.
+
+        Recall-N-gram = Number of correct predicted n-grams / Number of total target N-grams
+
+        Precision-N-gram = Number of correct predicted n-grams / Number of total predict N-grams
+
+        F1-Score = 2* ((Recall-N-gram * Precision-N-gram) / (Recall-N-gram + Precision-N-gram))
+
+
+Both these score are build on concept of N-gram. In n-gram the value of n, is group n words and these words will always be in order. For this project have consider the value on n = 2. </br>
+Because caption of the fashion item are the attributes, it does not matter in which order the model predits those attributes words.
 
 </br>
 
 # **Results** #
 </br>
-Train
-Valid
-Test
+
+<table style="width:100%">
+<tr style="border-bottom:1px solid black">
+<th>
+Dataset
+</th>
+<th>
+F1-Rouge@1
+</th>
+<th>
+F1-Rouge@2
+</th>
+<th>
+F1-RougeL@2
+</th>
+<th>
+BlEU@1
+</th>
+<th>
+BlEU@2
+</th>
+</tr>
+
+<tr>
+<th>Train</th>
+<th>0.45</th>
+<th>0.16</th>
+<th>0.44</th>
+<th>0.42</th>
+<th>0.26</th>
+</tr>
+
+<tr>
+<th>Valid</th>
+<th>0.42</th>
+<th>0.13</th>
+<th>0.41</th>
+<th>0.39</th>
+<th>0.22</th>
+</tr>
+
+<tr>
+<th>Test</th>
+<th>0.45</th>
+<th>0.13</th>
+<th>0.45</th>
+<th>0.41</th>
+<th>0.23</th>
+</tr>
+
+</table>
 </br>
 </br>
 
