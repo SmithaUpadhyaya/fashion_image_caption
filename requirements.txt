@@ -12,7 +12,7 @@ tqdm
 pyarrow==8.0.0 #Required to work with parquet file type. These is one engine that is used for parquet file
 fastparquet==0.8.1 #Required to work with parquet file type. This is also one engine that is used for parquet file
 
-#Download the image from web using the imageurl
+#Download the image from web using imageurl
 requests==2.28.2
 
 #Not required since in the end worked with jpeg file only. 
@@ -43,3 +43,26 @@ evaluate==0.4.0 #Huggingface evaluate library, Help: https://huggingface.co/docs
 peft==0.4.0# #0.4.0 was dev version. In case version is not release. Install using pip install -q git+https://github.com/huggingface/peft.git
 bitsandbytes==0.39.0
 pytorch==2.0.0
+
+#Deploy 
+streamlit==1.16.0 
+
+#Step 1 Create a Virtual enviroment with VSCode inside project folder
+#py -<<python_version>> -m venv <<your_environment_name>>
+
+#Step 2 Activate the Virtual Environment by calling Activate.bat 
+#\<<your_environment_name>>\Scripts\Activate.bat
+
+#Step 3: Select this Environment as Interpreatr in VScode
+#-> Ctrl+Shift+P
+#-> Select from drop down or type : "Python: Select Interpreter"
+#-> Select "Enter interpreter path..."
+#-> Select "Find.." and browse to folder and select" \Scripts\python.exe" in the new environment folder that we created.
+
+#Step 4: [Optional]: Upgrade pip in your_enviroment
+#-> Open the Terminal
+#-> Terminal should show <<your_environment_name>> in the command line. If not execute Step 2 again
+#-> pip install pip --upgrade
+
+#Step 5: Install the requirement dll
+#pip install -r requirements.txt
