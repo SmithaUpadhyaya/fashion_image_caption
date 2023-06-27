@@ -2,7 +2,7 @@
 
 # <u>**Automate Fashion Image Captioning using BLIP-2**</u> # 
 </br>
-The fashion industry isworth trillions of dollars. The goal of any company/seller is to help customer tofind the right product from a huge corpus of products that they are searchingfor. So, when customer find the right product they are mostly going to addthe item to their cart and which help in company revenue.</br>
+The fashion industry is worth trillions of dollars. The goal of any company/seller is to help customer tofind the right product from a huge corpus of products that they are searching for. So, when customer find the right product they are mostly going to add the item to their cart and which help in company revenue.</br>
 Accurate and enchanting descriptions of clothes on shopping websites can help customers without fashion knowledge to better understand the features (attributes, style, functionality, etc.) of the items and increase online sales by enticing more customers. Also, most of the time when any customer visits shopping websites, they are looking for a certain style or type of clothes that wish to purchase, they search for the item by providing a description of the item and the system finds the relevant items that match the search query by computing the similarity score between the query and the item caption. In such use cases having an accurate description of the clothes is useful.</br>
 Manually writing the descriptions is a non-trivial and highly expensive task. Thus, the automatic generation of descriptions is an urgent need and will help the seller (while uploading the product to recommend captions).
 </br>
@@ -11,11 +11,11 @@ Manually writing the descriptions is a non-trivial and highly expensive task. Th
 
 # **Problem Statement** #
 </br>
-Given the clothes imageprovide a short caption that describes the item. In general, in image captioningdatasets (e.g., COCO, Fliker), the descriptions of fashion items have threeunique features, which makes the automatic generation of captions a challengingtask. First, fashion captioning needs to describe the attributes of an item,while image captioning generally narrates the objects and their relations inthe image.</br>
-e.g. image where the model is wearing a shirt, the generalcaption model describes such images as "male wearing a white shirt".This is incorrect since we want the model to describe the item. In thisapplication, it is much more important to have a performant to caption theimage than an interpretable model.
+Given the clothes image provide a short caption that describes the item. In general, in image captioning datasets (e.g., COCO, Fliker), the descriptions of fashion items have three unique features, which makes the automatic generation of captions a challenging task. First, fashion captioning needs to describe the attributes of an item, while image captioning generally narrates the objects and their relations in the image.</br>
+e.g. image where the model is wearing a shirt, the general caption model describes such images as "male wearing a white shirt". This is incorrect since we want the model to describe the item. In thisapplication, it is much more important to have a performant to caption the image than an interpretable model.
 </br>
 </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images\challange_image_text.png"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src = "images\challange_image_text.png"/>
 </br>
 </br>
 
@@ -31,7 +31,7 @@ etc.), angles of a human body (front, back, side, etc.).
 "retro flair" are more attractive than the plain MS COCO descriptions, like "person in a dress".
 
 </br>
-<b><a href="https://github.com/xuewyang/Fashion_Captioning"> Source of the dataset</a></b>
+<b><a href = "https://github.com/xuewyang/Fashion_Captioning"> Source of the dataset</a></b>
 </br>
 <b><i>Citation:</i></b>
 @inproceedings{
@@ -59,14 +59,14 @@ BLIP2 is a recent powerful model by Salesforce that is capable of performing vis
 ## <u>*Overview on BLIP-2*</u> ##
 
 </br>
-<b><a href="https://arxiv.org/abs/2301.12597">BLIP2</a></b> introduces a lightweight module called Querying Transformer (Q-Former) that effectively enhances the vision-language model. Q-Former is a lightweight transformer that uses learnable query vectors to extract visual features from the frozen image encoder. </br>
+<b><a href = "https://arxiv.org/abs/2301.12597">BLIP2</a></b> introduces a lightweight module called Querying Transformer (Q-Former) that effectively enhances the vision-language model. Q-Former is a lightweight transformer that uses learnable query vectors to extract visual features from the frozen image encoder. </br>
 It acts as an information bottleneck between the frozen image encoder and the frozen Large Language Model (LLM), where it feeds the most useful visual feature for the LLM to output the desired text. 
 </br>
 BLIP2 has mainly two different versions based on the pre-trained LLM model used:
-</br>    1) Open Pre-trained Transformer Language Models(opt-2.7b) by Facebook. Pre-trained model weights in HuggingFace: <b><a href="https://huggingface.co/Salesforce/blip2-opt-6.7b">Salesforce/blip2-opt-6.7b</a></b>
-</br>    2) FlanT5 model by Google. Pre-trained model weights in HuggingFace: <b><a href="https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xl"> Salesforce/blip2-flan-t5-xl</a></b> or <b><a href="https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xxl">Salesforce/blip2-flan-t5-xxl</a></b>
+</br>    1) Open Pre-trained Transformer Language Models(opt-2.7b) by Facebook. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-6.7b</a></b>
+</br>    2) FlanT5 model by Google. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xl"> Salesforce/blip2-flan-t5-xl</a></b> or <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xxl">Salesforce/blip2-flan-t5-xxl</a></b>
 </br>
-In both these versions <i>Vision Encoder</i> for image extraction used was Vision Transformer (large-sized model) by Google.
+In both these versions <i>Vision Encoder</i> for image extraction used was <b><a href = "https://huggingface.co/google/vit-large-patch16-224"> Vision Transformer (large-sized model)</a></b> by Google.
 </br>
 </br>
 
@@ -80,9 +80,9 @@ In both these versions <i>Vision Encoder</i> for image extraction used was Visio
 Fine-tune pre-trained model **BLIP2**(trained on Fliker dataset) with Fashion dataset using **Low Rank Adaptation (LoRA)** a **Parameter-efficient fine-tuning technique (PEFT)**
 </br>
 
-The original model <b><u><i><a href="https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-2.7b</a></i></u></b> size was too large. It was quite challenging to fit and fine-tune the model on the 16GB GPU.
+The original model <b><u><i><a href = "https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-2.7b</a></i></u></b> size was too large. It was quite challenging to fit and fine-tune the model on the 16GB GPU.
 </br>
-So, for this project have downloaded the pre-trained model <b><u><i><a href="https://huggingface.co/ybelkada/blip2-opt-2.7b-fp16-sharded">ybelkada/blip2-opt-2.7b-fp16-sharded</a></i></u></b> from HuggingFace. This model is trained using OPT-2.7b LLM model with  reduced precision to float16.
+So, for this project have downloaded the pre-trained model <b><u><i><a href = "https://huggingface.co/ybelkada/blip2-opt-2.7b-fp16-sharded">ybelkada/blip2-opt-2.7b-fp16-sharded</a></i></u></b> from HuggingFace. This model uses OPT-2.7b LLM model with reduced precision to float16.
 </br>
 </br>
 
@@ -126,8 +126,8 @@ Because caption of the fashion item are the attributes, it does not matter in wh
 # **Results** #
 </br>
 
-<table style="width:100%">
-<tr style="border-bottom:1px solid black">
+<table style = "width:100%">
+<tr style = "border-bottom:1px solid black">
 <th>
 Dataset
 </th>
@@ -181,5 +181,7 @@ BlEU@2
 
 # **Try it Out** #
 
-Deployed the model on HuggingFace Space. You can try it out from this <b><u><i><a href= "">link</a></i></u></b> 
+Deployed the model on HuggingFace Space. You can check it out <b><u><i><a href = "https://huggingface.co/spaces/Upyaya/Fashion-Image-Captioning-using-BLIP-2">here</a></i></u></b> 
 
+## **Demo** ##
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "images\demo.gif" />
