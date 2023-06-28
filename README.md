@@ -63,7 +63,7 @@ BLIP2 is a recent powerful model by Salesforce that is capable of performing vis
 It acts as an information bottleneck between the frozen image encoder and the frozen Large Language Model (LLM), where it feeds the most useful visual feature for the LLM to output the desired text. 
 </br>
 BLIP2 has mainly two different versions based on the pre-trained LLM model used:
-</br>    1) Open Pre-trained Transformer Language Models(opt-2.7b) by Facebook. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-6.7b</a></b>
+</br>    1) Open Pre-trained Transformer Language Models(opt-2.7b) by Meta. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-6.7b</a></b>
 </br>    2) FlanT5 model by Google. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xl"> Salesforce/blip2-flan-t5-xl</a></b> or <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xxl">Salesforce/blip2-flan-t5-xxl</a></b>
 </br>
 In both these versions <i>Vision Encoder</i> for image extraction used was <b><a href = "https://huggingface.co/google/vit-large-patch16-224"> Vision Transformer (large-sized model)</a></b> by Google.
