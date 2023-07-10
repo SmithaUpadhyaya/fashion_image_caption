@@ -12,7 +12,7 @@ Manually writing the descriptions is a non-trivial and highly expensive task. Th
 # **Problem Statement** #
 </br>
 Given the clothes image provide a short caption that describes the item. In general, in image captioning datasets (e.g., COCO, Fliker), the descriptions of fashion items have three unique features, which makes the automatic generation of captions a challenging task. First, fashion captioning needs to describe the attributes of an item, while image captioning generally narrates the objects and their relations in the image.</br>
-e.g. image where the model is wearing a shirt, the general caption model describes such images as "male wearing a white shirt". This is incorrect since we want the model to describe the item. In thisapplication, it is much more important to have a performant to caption the image than an interpretable model.
+e.g. image where the model is wearing a shirt, the general caption model describes such images as "male wearing a white shirt". This is incorrect since we want the model to describe the item. In this application, it is much more important to have a performant to caption the image than an interpretable model.
 </br>
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src = "images\challange_image_text.png"/>
@@ -34,18 +34,19 @@ etc.), angles of a human body (front, back, side, etc.).
 <b><a href = "https://github.com/xuewyang/Fashion_Captioning"> Source of the dataset</a></b>
 </br>
 <b><i>Citation:</i></b>
-@inproceedings{
-    XuewenECCV20Fashion,
-    Author = {Xuewen Yang and Heming Zhang and Di Jin and Yingru Liu and Chi-Hao Wu and Jianchao Tan and Dongliang Xie and Jue Wang and Xin Wang},
-    Title = {Fashion Captioning: Towards Generating Accurate Descriptions with Semantic Rewards},
-    booktitle = {ECCV},
-    Year = {2020}
-    }
+<b>@inproceedings{</b></br>
+&emsp; &emsp; XuewenECCV20Fashion,</br>
+&emsp; &emsp; Author = {Xuewen Yang and Heming Zhang and Di Jin and Yingru Liu and Chi-Hao Wu and Jianchao Tan and Dongliang Xie and Jue Wang and Xin Wang},</br>
+&emsp; &emsp; Title = {Fashion Captioning: Towards Generating Accurate Descriptions with Semantic Rewards},</br>
+&emsp; &emsp; booktitle = {ECCV},</br>
+&emsp; &emsp; Year = {2020}</br>
+&emsp; }</br>
 </br>
 </br>
-For this project, have only considered 20k images for the pre-trained model due to resource limitations. When a train on the entire dataset would allow the model to see different patterns of thefashion item and the description of the item (which help in the create a largevocabulary that will help in describing new item caption).
-</br>
-For caption text, each item has to consider itemdescription, color, and brand. When a user search for an item they usuallymention specific color or particular brand along with the style they areinterested to buy. For cleaning caption did not apply to the stem as we want thecaption with proper grammar words. If this was a classification problem weapply stemming, since in that case, predict output is either 1 or 0 whereas inthis case, we want a proper word/sentence.
+For this project, have only considered 20k images for the pre-trained model due to resource limitations. </br> 
+When trained on the entire dataset would allow the model to see different patterns, design of the fashion item which help in the create a large vocabulary that will help in describing new item caption.</br>
+For caption an item , have consider item description, color, and brand. Because when a user search for an item they usually either mention specific color or particular brand along with the style they are interested to buy. </br>
+For cleaning caption did not apply to the stem as we want the caption with proper grammar words. If this was a classification problem we apply stemming, since in that case, predict output is either 1 or 0 whereas in our case, we want a proper word/sentence.
 </br>
 </br>
 </br>
@@ -62,10 +63,13 @@ BLIP2 is a recent powerful model by Salesforce that is capable of performing vis
 <b><a href = "https://arxiv.org/abs/2301.12597">BLIP2</a></b> introduces a lightweight module called Querying Transformer (Q-Former) that effectively enhances the vision-language model. Q-Former is a lightweight transformer that uses learnable query vectors to extract visual features from the frozen image encoder. </br>
 It acts as an information bottleneck between the frozen image encoder and the frozen Large Language Model (LLM), where it feeds the most useful visual feature for the LLM to output the desired text. 
 </br>
-BLIP2 has mainly two different versions based on the pre-trained LLM model used:
-</br>    1) Open Pre-trained Transformer Language Models(opt-2.7b) by Meta. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-6.7b</a></b>
-</br>    2) FlanT5 model by Google. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xl"> Salesforce/blip2-flan-t5-xl</a></b> or <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xxl">Salesforce/blip2-flan-t5-xxl</a></b>
+BLIP2 has mainly two different versions based on the pre-trained LLM model used:</br>
+
+1. Open Pre-trained Transformer Language Models(opt-2.7b) by Meta. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-6.7b</a></b>
+2. FlanT5 model by Google. Pre-trained model weights in HuggingFace: <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xl"> Salesforce/blip2-flan-t5-xl</a></b> or <b><a href = "https://huggingface.co/https://huggingface.co/Salesforce/blip2-flan-t5-xxl">Salesforce/blip2-flan-t5-xxl</a></b>
+
 </br>
+
 In both these versions <i>Vision Encoder</i> for image extraction used was <b><a href = "https://huggingface.co/google/vit-large-patch16-224"> Vision Transformer (large-sized model)</a></b> by Google.
 </br>
 </br>
@@ -77,11 +81,12 @@ In both these versions <i>Vision Encoder</i> for image extraction used was <b><a
 
 ## <u>*Solution*</u> ##
 
-Fine-tune pre-trained model **BLIP2**(trained on Fliker dataset) with Fashion dataset using **Low Rank Adaptation (LoRA)** a **Parameter-efficient fine-tuning technique (PEFT)**
+Fine-tune pre-trained model **BLIP2** (trained on Fliker dataset) with Fashion dataset using **Low Rank Adaptation (LoRA)** a **Parameter-efficient fine-tuning technique (PEFT)**
 </br>
 
 The original model <b><u><i><a href = "https://huggingface.co/Salesforce/blip2-opt-2.7b">Salesforce/blip2-opt-2.7b</a></i></u></b> size was too large. It was quite challenging to fit and fine-tune the model on the 16GB GPU.
 </br>
+
 So, for this project have downloaded the pre-trained model <b><u><i><a href = "https://huggingface.co/ybelkada/blip2-opt-2.7b-fp16-sharded">ybelkada/blip2-opt-2.7b-fp16-sharded</a></i></u></b> from HuggingFace. This model uses OPT-2.7b LLM model with reduced precision to float16.
 </br>
 </br>
